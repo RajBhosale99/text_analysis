@@ -133,7 +133,8 @@ st.markdown(
     """
     <style>
     [data-testid="stSidebar"] {
-        background-color: #e0e0e0; /* Lighter grey - more noticeable than before */
+        background-color: #000000; /* Black */
+        color: white; /* Optionally, set text color to white for better readability */
     }
     </style>
     """,
