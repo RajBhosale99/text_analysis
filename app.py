@@ -162,10 +162,11 @@ if analysis_section == 'Data Input':
             if 'text' not in data.columns:
                 st.error("CSV must contain a 'text' column.")
             else:
-                st.success("Data loaded successfully!")
+                st.success("Data loaded successfully! Processing will start automatically.") # Updated success message
                 st.subheader("Original Data Sample")
                 st.write(data.head(3))
 
+                # --- Step 1: Text Cleaning --- # Processing starts immediately
                 with st.status("Data Cleaning in progress...") as status:
                     data['cleaned_text'] = data['text'].apply(clean_text)
                     status.update(label="Grammar Correction in progress...")
