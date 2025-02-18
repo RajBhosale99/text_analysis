@@ -322,7 +322,7 @@ if uploaded_file is not None:
             ax_topic.axis('off')
             st.pyplot(fig_topic)
             
-            st.success("Processing complete. You can download the processed CSV and view all visualizations below.")
+            st.success("Processing complete. You can download the processed CSV and view all visualizations.")
     
     except Exception as e:
         st.error(f"An error occurred: {e}")
