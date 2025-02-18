@@ -133,8 +133,12 @@ st.title("NLP Processing & Visualization Dashboard")
 with st.sidebar:
     st.header("Navigation")
     analysis_section = st.radio("Go to",
-                                 ['Data Input', 'Visualizations', 'Download Data'])
-    if analysis_section == 'Data Input':
+                                 ['Data Input', 'Visualizations', 'Download Data']) #, 'Processing Options' - if we add options later
+
+# ------------------------------
+# Data Input Section
+# ------------------------------
+if analysis_section == 'Data Input':
     st.header("Data Input")
     st.info(
         "Please upload a CSV file that includes a header with a 'text' column. "
@@ -198,8 +202,7 @@ elif analysis_section == 'Visualizations':
         visualization_tab = st.radio("Select Visualization Category",
                                     ['Text Overview', 'Sentiment Analysis', 'Emotion Analysis', 'Topic Modeling'])
 
-
-if visualization_tab == 'Text Overview':
+        if visualization_tab == 'Text Overview':
             st.subheader("Text Overview Visualizations")
 
             # 1. Text Length Distributions
