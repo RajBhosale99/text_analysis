@@ -1,0 +1,13 @@
+streamlit
+nltk
+transformers
+sentence-transformers
+language-tool-python
+seaborn
+wordcloud
+tqdm
+scikit-learn
+pyod
+gensim
+ibm-watson
+python-dotenv
