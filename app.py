@@ -128,7 +128,17 @@ def get_emotion_scores(analysis_result):
 # Streamlit Dashboard Layout - IMPROVED
 # ------------------------------
 st.title("NLP Processing & Visualization Dashboard")
-
+# Sidebar Styling - Added background color
+st.markdown(
+    """
+    <style>
+    [data-testid="stSidebar"] {
+        background-color: #f0f2f6; /* Very light grey */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 # Sidebar for navigation
 with st.sidebar:
     st.header("Navigation")
@@ -156,31 +166,27 @@ if analysis_section == 'Data Input':
                 st.subheader("Original Data Sample")
                 st.write(data.head(3))
 
-                # --- Processing Steps ---
-                if st.button("Start Processing"): # Button to trigger processing
-                    with st.status("Data Cleaning in progress...") as status:
-                        data['cleaned_text'] = data['text'].apply(clean_text)
-                        status.update(label="Grammar Correction in progress...")
-                        data['corrected_text'] = data['cleaned_text'].progress_apply(correct_grammar)
-                        status.update(label="IBM Watson NLU Analysis in progress...")
-                        data['nlu_analysis'] = data['corrected_text'].progress_apply(analyze_with_nlu)
-                        status.update(label="POS Tagging in progress...")
-                        data['pos_tags'] = data['corrected_text'].progress_apply(get_pos_tags)
-                        status.update(label="Topic Modeling in progress...")
-                        data['tokens'] = data['corrected_text'].apply(lambda x: nltk.word_tokenize(x))
-                        dictionary = corpora.Dictionary(data['tokens'])
-                        corpus = [dictionary.doc2bow(text) for text in data['tokens']]
-                        lda_model = LdaModel(corpus, num_topics=5, id2word=dictionary, passes=15)
-                        data['nlu_sentiment'] = data['nlu_analysis'].apply(get_nlu_sentiment_score)
-                        data['nlu_sentiment_category'] = data['nlu_sentiment'].apply(categorize_nlu_sentiment)
-                        data['emotion_scores'] = data['nlu_analysis'].apply(get_emotion_scores)
-                        for emotion in ['sadness', 'joy', 'fear', 'disgust', 'anger']:
-                            data[emotion] = data['emotion_scores'].apply(lambda x: x.get(emotion, None))
-                        st.session_state['processed_data'] = data # Store processed data in session state
-                        st.session_state['lda_model'] = lda_model # Store LDA model
-                        st.success("Processing complete! Go to Visualizations.")
-                else:
-                    st.info("Upload a CSV and click 'Start Processing' to begin.")
+                with st.status("Data Cleaning in progress...") as status:
+                    data['cleaned_text'] = data['text'].apply(clean_text)
+                    status.update(label="Grammar Correction in progress...")
+                    data['corrected_text'] = data['cleaned_text'].progress_apply(correct_grammar)
+                    status.update(label="IBM Watson NLU Analysis in progress...")
+                    data['nlu_analysis'] = data['corrected_text'].progress_apply(analyze_with_nlu)
+                    status.update(label="POS Tagging in progress...")
+                    data['pos_tags'] = data['corrected_text'].progress_apply(get_pos_tags)
+                    status.update(label="Topic Modeling in progress...")
+                    data['tokens'] = data['corrected_text'].apply(lambda x: nltk.word_tokenize(x))
+                    dictionary = corpora.Dictionary(data['tokens'])
+                    corpus = [dictionary.doc2bow(text) for text in data['tokens']]
+                    lda_model = LdaModel(corpus, num_topics=5, id2word=dictionary, passes=15)
+                    data['nlu_sentiment'] = data['nlu_analysis'].apply(get_nlu_sentiment_score)
+                    data['nlu_sentiment_category'] = data['nlu_sentiment'].apply(categorize_nlu_sentiment)
+                    data['emotion_scores'] = data['nlu_analysis'].apply(get_emotion_scores)
+                    for emotion in ['sadness', 'joy', 'fear', 'disgust', 'anger']:
+                        data[emotion] = data['emotion_scores'].apply(lambda x: x.get(emotion, None))
+                    st.session_state['processed_data'] = data # Store processed data in session state
+                    st.session_state['lda_model'] = lda_model # Store LDA model
+                    st.success("Processing complete! Go to Visualizations.")
 
 
         except Exception as e:
