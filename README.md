@@ -82,13 +82,13 @@ Navigate to your project directory in the terminal and run:
 streamlit run app.py
 ```
 **Usage**
-Data Input:
-
-Open the application in your browser.
-
+Data Input:  
+Open the application in your browser.  
 Navigate to the "Data Input" section using the sidebar.  
-Click on "Browse files" to upload a CSV file from your local machine. Ensure your CSV file has a column named 'text' containing the text data you want to analyze.  
-Once uploaded successfully, the application will automatically begin processing your data. Status updates will be displayed to track the progress of each processing step.  
+Click on "Browse files" to upload a CSV file from your local machine.  
+Ensure your CSV file has a column named 'text' containing the text data you want to analyze.    
+Once uploaded successfully, the application will automatically begin processing your data.  
+Status updates will be displayed to track the progress of each processing step.  
 
 Explore Visualizations:  
 After processing is complete, navigate to the "Visualizations" section using the sidebar.
@@ -96,11 +96,9 @@ Choose a visualization category from the radio buttons: "Text Overview", "Sentim
 Explore the interactive visualizations generated for the selected category. Information messages are provided above each visualization to explain its purpose and interpretation.
 Download Processed Data:
 
-To download the processed and analyzed data, navigate to the "Download Data" section in the sidebar.
-Click the "Download Processed CSV" button. A CSV file named enhanced_processed_data.csv will be downloaded to your browser's default download location. This file contains your original data augmented with the results of all NLP processing steps.
-
-
-
+To download the processed and analyzed data, navigate to the "Download Data" section in the sidebar.  
+Click the "Download Processed CSV" button.  
+A CSV file named enhanced_processed_data.csv will be downloaded to your browser's default download location. This file contains your original data augmented with the results of all NLP processing steps.  
 
 **Example Workflow**
 Prepare your CSV data: Ensure your data is in CSV format and includes a column named 'text' with the text entries you want to analyze.
@@ -114,5 +112,5 @@ Visualize Results: Once processing is complete, go to the "Visualizations" secti
 Download Enhanced Data: If you need the processed data for further analysis or record-keeping, download it from the "Download Data" section.
 
 
-**Deployed Project:**
+**Deployed Project:**  
 https://textanalysis-aas4wymhmc2y5iqjyz8yfw.streamlit.app/
