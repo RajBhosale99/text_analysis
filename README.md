@@ -6,15 +6,16 @@
 
 **Install Dependencies:**
 It is recommended to create a virtual environment.
-
+'''
 python -m venv venv
-'''source venv/bin/activate  # On Linux/macOS
+source venv/bin/activate  # On Linux/macOS
 
 venv\Scripts\activate  # On Windows
 
 pip install -r requirements.txt
 
-Then run pip install -r requirements.txt.'''
+Then run pip install -r requirements.txt.
+'''
 
 
 **Set up IBM Watson NLU API Credentials:**
