@@ -85,11 +85,12 @@ streamlit run app.py
 Data Input:
 
 Open the application in your browser.
-Navigate to the "Data Input" section using the sidebar.
-Click on "Browse files" to upload a CSV file from your local machine. Ensure your CSV file has a column named 'text' containing the text data you want to analyze.
-Once uploaded successfully, the application will automatically begin processing your data. Status updates will be displayed to track the progress of each processing step.
-Explore Visualizations:
 
+Navigate to the "Data Input" section using the sidebar.  
+Click on "Browse files" to upload a CSV file from your local machine. Ensure your CSV file has a column named 'text' containing the text data you want to analyze.  
+Once uploaded successfully, the application will automatically begin processing your data. Status updates will be displayed to track the progress of each processing step.  
+
+Explore Visualizations:  
 After processing is complete, navigate to the "Visualizations" section using the sidebar.
 Choose a visualization category from the radio buttons: "Text Overview", "Sentiment Analysis", "Emotion Analysis", or "Topic Modeling".
 Explore the interactive visualizations generated for the selected category. Information messages are provided above each visualization to explain its purpose and interpretation.
@@ -103,9 +104,13 @@ Click the "Download Processed CSV" button. A CSV file named enhanced_processed_d
 
 **Example Workflow**
 Prepare your CSV data: Ensure your data is in CSV format and includes a column named 'text' with the text entries you want to analyze.
+
 Upload Data: In the "Data Input" section of the dashboard, upload your CSV file.
+
 Wait for Processing: Monitor the status updates in the application as your data is cleaned, analyzed, and processed.
+
 Visualize Results: Once processing is complete, go to the "Visualizations" section and explore the different categories to understand your text data through various charts and word clouds.
+
 Download Enhanced Data: If you need the processed data for further analysis or record-keeping, download it from the "Download Data" section.
 
 
