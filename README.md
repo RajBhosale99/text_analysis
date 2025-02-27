@@ -1,14 +1,51 @@
 # IMPROVING TEXT ANALYTICS DATA QUALITY WITH ADVANCED NLP
 
+## Overview
+
+This Streamlit application provides a user-friendly dashboard designed to enhance the quality of text analytics data through advanced Natural Language Processing (NLP) techniques. It empowers users to upload CSV files containing text data, apply a suite of sophisticated NLP processes, and visually explore the enriched data.  The dashboard is built using Streamlit for an interactive interface, pandas for efficient data manipulation, NLTK and transformers for core text processing, IBM Watson Natural Language Understanding for deep analytical insights, and matplotlib/seaborn for compelling visualizations.
+
+## Features
+
+- **Data Input:**
+    - Accepts CSV file uploads, requiring a 'text' column to specify the text data for analysis.
+    - Initiates automatic data loading and processing immediately after successful file upload.
+    - Displays a sample of the original data for quick validation and preview.
+
+- **Advanced Text Processing for Data Quality Improvement:**
+    - **Text Cleaning:**  Standardizes text by lowercasing, removing HTML artifacts, eliminating non-alphabetic characters, and normalizing whitespace, thus improving data consistency.
+    - **Grammar Correction:** Employs the `prithivida/grammar_error_correcter_v1` transformer model to rectify grammatical inaccuracies, enhancing text clarity and readability for downstream analytics.
+    - **Part-of-Speech (POS) Tagging:**  Utilizes NLTK to assign POS tags to words, enabling nuanced linguistic analysis and feature extraction for improved text understanding.
+    - **Topic Modeling (LDA):**  Applies Latent Dirichlet Allocation to discover latent topics within the text corpus, structuring unstructured text and revealing thematic patterns.
+
+- **Deep Textual Insights with IBM Watson NLU:**
+    - **Sentiment Analysis:**  Leverages IBM Watson NLU to perform in-depth sentiment analysis, providing a granular sentiment score and categorical classification (Positive, Negative, Neutral, Unknown) for each text entry.
+    - **Emotion Analysis:**  Detects a spectrum of emotions—sadness, joy, fear, disgust, and anger—within the text using IBM Watson NLU, quantifying emotional content for richer insights.
+    - **Keyword and Entity Extraction:**  *(Functionality inherent in IBM Watson NLU analysis, although current visualizations focus on sentiment, emotion, and topics. Expandable for future feature enhancements.)*
+
+- **Interactive Data Visualizations for Quality Assessment:**
+    - **Text Overview Visualizations:**
+        - **Text Length Distribution:** Histograms visualize the distribution of text lengths pre- and post-cleaning, demonstrating the impact of cleaning processes on data structure.
+        - **Word Clouds:**  Visually represent the most frequent terms in both original and cleaned text, highlighting key vocabulary and the effect of text preprocessing.
+    - **Sentiment Analysis Visualizations:**
+        - **Sentiment Score Distribution:**  Histograms display the distribution of IBM NLU sentiment scores, allowing assessment of overall sentiment polarity and intensity within the dataset.
+        - **Sentiment Category Counts:** Bar charts present counts of text entries per sentiment category, providing a clear overview of sentiment distribution.
+        - **Sentiment vs. Text Length:** Scatter plots explore correlations between cleaned text length and sentiment scores, colored by sentiment category, to identify potential relationships.
+    - **Emotion Analysis Visualizations:**
+        - **Average Emotion Scores:** Bar charts showcase average emotion scores across emotions detected by IBM NLU, revealing dominant emotional tones in the text data.
+    - **Topic Modeling Visualizations:**
+        - **Topic Word Cloud:**  Word clouds for each LDA-derived topic (currently demonstrating Topic 0) visualize the most salient terms per topic, aiding in topic interpretation and validation.
+
+- **Processed Data Download:**
+    - Enables download of the fully processed and analyzed dataset as a CSV file. The downloaded data includes original text alongside cleaned text, grammar-corrected text, NLU analysis results, sentiment classifications, emotion scores, POS tags, and topic modeling outputs – facilitating further in-depth analysis and external application.
+
 ## Setup and Installation
-**Prerequisites:**
 
+1. **Prerequisites:**
     - Python 3.x installed on your system.
-    
     - pip package installer.
-    
-**Then Clone the Repository**
 
+2. **Clone the Repository:**
+ 
 **Install Dependencies:**
 It is recommended to create a virtual environment.
 ```
