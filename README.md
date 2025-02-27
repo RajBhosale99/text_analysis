@@ -2,19 +2,19 @@
 **Prerequisites:**
     - Python 3.x installed on your system.
     - pip package installer.
-
+**Then Clone the Repository**
 
 **Install Dependencies:**
 It is recommended to create a virtual environment.
 
 python -m venv venv
-source venv/bin/activate  # On Linux/macOS
+'''source venv/bin/activate  # On Linux/macOS
 
 venv\Scripts\activate  # On Windows
 
 pip install -r requirements.txt
 
-Then run pip install -r requirements.txt.
+Then run pip install -r requirements.txt.'''
 
 
 **Set up IBM Watson NLU API Credentials:**
@@ -27,8 +27,8 @@ API Key and URL: Generate an API key and service URL for your NLU service instan
 
 Create a .env file in the root directory of your project.
 Add your IBM Watson NLU API key and URL to the .env file:
-API_KEY="YOUR_IBM_NLU_API_KEY"
-API_URL="YOUR_IBM_NLU_URL"
+'''API_KEY="YOUR_IBM_NLU_API_KEY"
+API_URL="YOUR_IBM_NLU_URL"'''
 
 
 **Run the Streamlit Application:**
