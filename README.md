@@ -39,12 +39,9 @@ API_URL="YOUR_IBM_NLU_URL"
 
 **Run the Streamlit Application:**
 Navigate to your project directory in the terminal and run:
-
+```
 streamlit run app.py
-
-
-
-
+```
 **Usage**
 Data Input:
 
