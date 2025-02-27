@@ -21,7 +21,7 @@ Then run pip install -r requirements.txt.
 ```
 
 
-#**Set up IBM Watson NLU API Credentials:**
+#Set up IBM Watson NLU API Credentials:
 
 IBM Cloud Account: Sign up for an IBM Cloud account if you don't have one.
 Natural Language Understanding Service: Create a Natural Language Understanding service instance in your IBM Cloud account.
